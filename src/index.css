@@ -15,9 +15,23 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
   color: var(--Very-Dark-Blue);
   background: var(--Very-Light-Gray);
+}
+
+a {
+  text-decoration: none;
+  color: var(--Very-Dark-Blue);
+}
+
+#dark a {
+  color: var(--White);
 }

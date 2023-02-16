@@ -8,7 +8,7 @@
 }
 
 .search-bar-input {
-    width: 25vw;
+    min-width: 25vw;
     border: none;
     outline-style: none;
 }
@@ -28,6 +28,22 @@
     box-shadow: 0px 1px 3px var(--Dark-Gray);
 }
 
+#dark .search-bar-input-holder, #dark .search-bar-input {
+    background: var(--Dark-Blue-DM);
+    color: var(--White);
+}
+
 .search-bar-input::placeholder {
     color: var(--Dark-Gray)
+}
+
+@media (max-width: 600px) {
+    .search-bar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
 }

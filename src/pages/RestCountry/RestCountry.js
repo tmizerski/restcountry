@@ -6,7 +6,7 @@ import './restcountry.css';
 import axios from "axios";
 
 
-function RestCountry(props) {
+function RestCountry() {
     const [countries, setCountries] = useState();
     const [inputValue, setInputValue] = useState();
     const [region, setRegion] = useState();
@@ -26,12 +26,14 @@ function RestCountry(props) {
     },[])
 
     useEffect(() => {
-        if(region){
-            axios.get(`https://restcountries.com/v3.1/region/${region}`)
+        if(region && region.label !== "Filter by region"){
+            axios.get(`https://restcountries.com/v3.1/region/${region.value}`)
                 .then( r => {
                     setCountries(null);
                     setCountries(r.data);
                 })
+        } else {
+            init()
         }
     },[region])
 
@@ -41,9 +43,13 @@ function RestCountry(props) {
             <SearchBar
                 setInputValue={setInputValue}
                 inputValue={inputValue}
-                region={setRegion}
+                region={region}
+                setRegion={setRegion}
             />
-            <GridList countries={countries} inputValue={inputValue}/>
+            <GridList
+                countries={countries}
+                inputValue={inputValue}
+            />
         </div>
     );
 }

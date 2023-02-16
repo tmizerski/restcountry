@@ -11,7 +11,31 @@
     box-shadow: 0px 2px 6px var(--Dark-Gray);
 }
 
+#dark .top-bar-container {
+    background: var(--Dark-Blue-DM);
+}
+
 .top-bar-title {
     font-weight: 800;
     font-size: 1.5rem;
+}
+
+.toggle-theme span{
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.toggle-theme div {
+    display: flex;
+    gap: .8rem;
+}
+
+@media (max-width: 600px) {
+    .top-bar-container {
+        padding: 0 2rem;
+    }
+
+    .top-bar-title {
+        font-size: 1rem;
+    }
 }
